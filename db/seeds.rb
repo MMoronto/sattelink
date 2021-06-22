@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#   image_url: "https://sattelink.s3.amazonaws.com/Compact-GNSS-Active-Patch-Antenna.png",
 Item.create([
     {
         name: "Compact GNSS Active Patch Antenna",
