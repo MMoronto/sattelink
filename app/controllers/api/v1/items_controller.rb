@@ -12,6 +12,16 @@ module Api
 
                 renderjson: ItemSerializer.new(items).serialized_json
             end
+
+            def create
+                item = Item.new(item_params)
+            end
+
+            private
+
+            def item_params
+                params.require(:item).permit(:name, :image_url, :price, :details)
+            end
         end
     end
 end
