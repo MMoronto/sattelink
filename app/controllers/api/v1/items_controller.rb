@@ -23,6 +23,16 @@ module Api
                 end
             end
 
+            def update
+                item = Item.find_by(slug: params[:slug])
+
+                if item.update(item_params)
+                    render json: ItemSerializer.new(item).serialized_json
+                else
+                    render json: { error: item.errors.messages }, status: 422
+                end
+            end
+
             private
 
             def item_params
