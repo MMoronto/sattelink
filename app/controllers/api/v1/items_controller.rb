@@ -33,6 +33,16 @@ module Api
                 end
             end
 
+            def destroy
+                item = Item.find_by(slug: params[:slug])
+
+                if item.destroy
+                    head :no_content
+                else
+                    render json: { errors: item.errors.messages }, status: 422
+                end
+            end
+
             private
 
             def item_params
