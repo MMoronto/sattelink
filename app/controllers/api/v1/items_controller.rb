@@ -10,7 +10,7 @@ module Api
             def show
                 item = Item.find_by(slug: params[:slug])
 
-                renderjson: ItemSerializer.new(items).serialized_json
+                render json: ItemSerializer.new(item).serialized_json
             end
 
             def create
@@ -39,7 +39,7 @@ module Api
                 if item.destroy
                     head :no_content
                 else
-                    render json: { errors: item.errors.messages }, status: 422
+                    render json: { errors: item.errors }, status: 422
                 end
             end
 
