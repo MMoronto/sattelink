@@ -4,20 +4,20 @@ module Api
             def index
                 items = Item.all
 
-                render json: ItemSerializer.new(items).serialized_json
+                render json: ItemSerializer.new(items, options).serialized_json
             end
 
             def show
                 item = Item.find_by(slug: params[:slug])
 
-                render json: ItemSerializer.new(item).serialized_json
+                render json: ItemSerializer.new(item, options).serialized_json
             end
 
             def create
                 item = Item.new(item_params)
 
                 if item.save
-                    render json: ItemSerializer.new(item).serialized_json
+                    render json: ItemSerializer.new(item, options).serialized_json
                 else
                     render json: { error: item.errors.messages }, status: 422
                 end
@@ -27,7 +27,7 @@ module Api
                 item = Item.find_by(slug: params[:slug])
 
                 if item.update(item_params)
-                    render json: ItemSerializer.new(item).serialized_json
+                    render json: ItemSerializer.new(item, options).serialized_json
                 else
                     render json: { error: item.errors.messages }, status: 422
                 end
