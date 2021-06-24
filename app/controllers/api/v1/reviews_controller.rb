@@ -1,6 +1,25 @@
 module Api
     module V1
         class ReviewsController < ApplicationController
+            def create
+                review = Review.new(review_params)
+
+                if review.save
+                    render json: ReviewSerializer.new(review).serialized_json
+                else
+                    render json: { errors: review.errors.messages }, status: 422
+                end
+            end
+
+            def destroy
+                review = Review.find(params[:id])
+
+                if review.destroy
+                    head :no_content
+                else
+                    render json: { errors: review.errrors.messages }, status: 422
+                end
+            end
 
             private
 
