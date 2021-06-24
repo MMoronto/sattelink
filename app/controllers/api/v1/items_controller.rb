@@ -48,6 +48,10 @@ module Api
             def item_params
                 params.require(:item).permit(:name, :image_url, :price, :details)
             end
+
+            def options
+                @options ||= { include: %i[reviews] }
+            end
         end
     end
 end
