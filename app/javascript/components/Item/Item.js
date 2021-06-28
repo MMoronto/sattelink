@@ -5,3 +5,5 @@ const Item = () => {
         <div>This is the Items#show page for our app.</div>
     )
 }
+
+export default Item
