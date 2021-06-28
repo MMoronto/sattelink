@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Items = () => {
     const [items, setItems] = useState([])
@@ -7,9 +7,11 @@ const Items = () => {
         <div className="home">
             <div className="header">
                 <h1>Sattelink</h1>
-                <p>Number One webmarket place for CubeSats</p>
+                <p className="subheader">Number One webmarket place for CubeSats</p>
             </div>
-            <div className="grid"></div>
+            <div className="grid">
+                ITEMS GRID GOES HERE
+            </div>
         </div>
     )
 }
