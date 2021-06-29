@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
+import Item from './Item'
 
 const Items = () => {
     const [items, setItems] = useState([])
@@ -15,8 +16,9 @@ const Items = () => {
         .catch( resp => console.log(resp) )
     }, [items.length])
 
-    const list = items.map( item => {
-        return (<li key={item.attributes.name} >{item.attributes.name}</li>)
+    const grid = items.map( item => {
+        return (<Item 
+            key={item.attributes.name} >{item.attributes.name}</Item>)
     })
 
     return(
