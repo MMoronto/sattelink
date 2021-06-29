@@ -6,8 +6,8 @@ import Item from './Item/Item'
 const App = () => {
     return (
         <Switch>
-            <Route exact path="/" component="Items" />
-            <Route exact path="/:slug" component="Item" />
+            <Route exact path="/" component={Items} />
+            <Route exact path="/items/:slug" component={Item} />
         </Switch>
     )
 }
