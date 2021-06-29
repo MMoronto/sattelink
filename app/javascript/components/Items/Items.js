@@ -10,12 +10,14 @@ const Items = () => {
 
         axios.get('/api/v1/items.json')
         .then( resp => {
-            debugger
+            setItems(resp.data.data)
         })
-        .catch( data => {
-            debugger
-        })
-    }, [])
+        .catch( resp => console.log(resp) )
+    }, [items.length])
+
+    const list = items.map(item => {
+        return  (<li key={item.attributes.name}>{item.attributes.name}</li>)
+    })
 
     return(
         <div className="home">
