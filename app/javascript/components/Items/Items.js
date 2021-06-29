@@ -17,8 +17,12 @@ const Items = () => {
     }, [items.length])
 
     const grid = items.map( item => {
-        return (<Item 
-            key={item.attributes.name} >{item.attributes.name}</Item>)
+        return (
+            <Item 
+                key={item.attributes.name}
+                attributes={item.attributes}
+            />
+        )
     })
 
     return(
@@ -28,7 +32,7 @@ const Items = () => {
                 <p className="subheader">Number One webmarket for CubeSats</p>
             </div>
             <div className="grid">
-                <ul>{list}</ul>
+                <ul>{grid}</ul>
             </div>
         </div>
     )
