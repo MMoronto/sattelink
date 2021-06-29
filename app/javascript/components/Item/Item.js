@@ -2,7 +2,12 @@ import React from 'react'
 
 const Item = () => {
     return(
-        <div>This is the Items#show page for our app.</div>
+        <div className="card">
+            <div className="item-logo"></div>
+            <div className="item-name"></div>
+            <div className="item-score"></div>
+            <div className="item-link"></div>
+        </div>
     )
 }
 
