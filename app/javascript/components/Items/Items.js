@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const Items = () => {
     const [items, setItems] = useState([])
@@ -6,7 +7,15 @@ const Items = () => {
     useEffect(()=> {
         // Get all of our items from api
         // Update items in our state
-    })
+
+        axios.get('/api/v1/items.json')
+        .then( resp => {
+            debugger
+        })
+        .catch( data => {
+            debugger
+        })
+    }, [])
 
     return(
         <div className="home">
