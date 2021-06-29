@@ -15,8 +15,8 @@ const Items = () => {
         .catch( resp => console.log(resp) )
     }, [items.length])
 
-    const list = items.map(item => {
-        return  (<li key={item.attributes.name}>{item.attributes.name}</li>)
+    const list = items.map( item => {
+        return (<li key={item.attributes.name} >{item.attributes.name}</li>)
     })
 
     return(
@@ -26,7 +26,7 @@ const Items = () => {
                 <p className="subheader">Number One webmarket for CubeSats</p>
             </div>
             <div className="grid">
-                ITEMS GRID GOES HERE
+                <ul>{list}</ul>
             </div>
         </div>
     )
