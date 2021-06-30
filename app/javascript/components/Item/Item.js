@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Item = (props) => {
+    const {name, image_url, slug} = props.attributes
+    
     return(
         <div className="card">
             <div className="item-logo">
