@@ -29,7 +29,7 @@ const Items = () => {
         <div className="home">
             <div className="header">
                 <h1>Sattelink</h1>
-                <p className="subheader">Number One webmarket for CubeSats</p>
+                <p className="subheader">Online marketplace for CubeSats</p>
             </div>
             <div className="grid">
                 <ul>{grid}</ul>
