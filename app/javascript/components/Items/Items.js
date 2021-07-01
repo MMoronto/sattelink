@@ -16,11 +16,11 @@ const Items = () => {
         .catch( resp => console.log(resp) )
     }, [items.length])
 
-    const grid = items.map( item => {
+    const grid = items.map( stuff => {
         return (
             <Item 
-                key={item.attributes.name}
-                attributes={item.attributes}
+                key={stuff.attributes.name}
+                attributes={stuff.attributes}
             />
         )
     })
